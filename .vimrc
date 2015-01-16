@@ -59,7 +59,5 @@ set showcmd
 " allow mouse scrolling
 set mouse=a
 
-" allow pig syntax files. source: http://www.vim.org/scripts/script.php?script_id=2186
-augroup filetypedetect
-  au BufNewFile,BufRead *.pig,*.piglet,*.macro set filetype=pig syntax=pig
-augroup END
+" bash-style tab completion
+set wildmode=longest,list
