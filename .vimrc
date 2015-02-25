@@ -1,5 +1,11 @@
 " pchan vim config
 
+" This must be first, because it changes other options as side effect
+set nocompatible
+
+" Instead of closing buffers, it hides them (which saves undo history, etc)
+set hidden
+
 " For the most accurate but slowest result, set the syntax
 " synchronization method to fromstart. This can be done with an autocmd
 " in your vimrc:
@@ -14,19 +20,19 @@ syntax on
 " (http://vim.wikia.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen)
 set scrolloff=5
 
-set nu
+" Some basic settings
+set number              " Show line numbers
+set nowrap              " Don't wrap lines
+set expandtab           " Expand tab into spaces (set expandtab! to turn off)
+set tabstop=4           " A tab is four spaces
+set shiftwidth=4        " number of spaces to use for autoindenting
+set autoindent          " filetype indent on
+set copyindent          " copy previous indentation on autoindenting
 
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set smartindent
-" filetype indent on
-
-" show matching brackets
-" The showmatch option is also useful: it can reduce the need for %,
-" the cursor will briefly jump to the matching brace when you insert
-" one.
-set showmatch 
+set showmatch           " show matching brackets
+set smarttab            " insert tabs on the start of a line based on shiftwidth
+set hlsearch            " highlights search matches
+set incsearch           " allow instant (incremental) searching
 
 " Backspace works in Insert mode, but won't delete over line breaks
 " This make backspace work like most other apps
@@ -44,14 +50,13 @@ set laststatus=2
 set isfname-== 
 set isfname-=,
 
-" allow instant (incremental) searching
-set incsearch
-
-" highlights search matches
-set hlsearch
+" Allow a lot of history!
+set history=1000        " remember many more commands and search history
+set undolevels=1000     " let undo many times
+set title               " change the terminal's title
 
 " ignore these files when completing names
-set wildignore=.svn,.git
+set wildignore=.svn,.git,*.swp,*.pyc
 
 " the bottom line in the editor will show info about current command
 set showcmd
