@@ -30,4 +30,13 @@ export PS1='[pchan@macbook \[\033[0;36m\]\W\[\033[0m\]$(__git_ps1 " \[\033[1;32m
 # Instead, put any customisations or personal bash preferences into the file ~/.local.bash
 ############################
 
-#source ${HOME}/.local.bash
+source ${HOME}/.local.bash
+
+##
+# Your previous /Users/philip/.bash_profile file was backed up as /Users/philip/.bash_profile.macports-saved_2015-03-10_at_06:56:21
+##
+
+# MacPorts Installer addition on 2015-03-10_at_06:56:21: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
